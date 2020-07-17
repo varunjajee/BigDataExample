@@ -1,0 +1,38 @@
+# Create the two indices
+PUT /amazon-in
+PUT /flipkart-delete
+PUT /myntra
+
+# Update mappings on all 3.
+PUT /amazon-in,flipkart,myntra/_mapping 
+{
+  "properties": {
+    "Title": { "type": "text" },
+	"CurrentPrince": { "type": "text" },
+	"OriginalPrince": { "type": "text" },
+	"Discountpercentage": { "type": "text" },
+	"Color": { "type": "text" },
+	"OuterMaterial": { "type": "text" },
+	"ModelName": { "type": "text" },
+	"idealFor": { "type": "text" }
+  }
+}
+
+
+
+PUT /flipkart-delete
+PUT /flipkart-delete/_mapping 
+{
+  "properties": {
+    "Title": { "type": "text" },
+	"CurrentPrince": { "type": "text" },
+	"OriginalPrince": { "type": "text" },
+	"Discountpercentage": { "type": "text" },
+	"Color": { "type": "text" },
+	"OuterMaterial": { "type": "text" },
+	"ModelName": { "type": "text" },
+	"idealFor": { "type": "text" }
+  }
+}
+
+https://stackoverflow.com/questions/29671524/kibana-how-to-display-log-as-table
