@@ -15,14 +15,16 @@ object producerKafka {
 
     val producer = new KafkaProducer[String, String](props)
 
-    val TOPIC = "mytopic2"
+    val TOPIC = "mytopic4"
     println("TOPIC :- " + TOPIC)
-  for( i <- 0 to 10)
-    {
-      val record = new ProducerRecord(TOPIC, "key", s"hello $i")
+
+    for (j <- 0 to 100) {
+    for (i <- ((j*5)+ 1) to ((j+1)* 5)) {
+      val record = new ProducerRecord(TOPIC, "key", s"TestHello $i")
       producer.send(record)
     }
-
+    Thread.sleep(50000)
+  }
 
     val record1 = new ProducerRecord(TOPIC, "key", s"hello ")
     producer.send(record1)
